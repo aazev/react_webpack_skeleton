@@ -1,0 +1,37 @@
+{
+  "name": "reactWebpackSkeleton",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build-react": "webpack -d",
+    "build-sass": "node-sass --sourceMap=true --include-path=./src/scss/ src/scss/main.scss css/main.css",
+    "deploy-react": "webpack -p",
+    "deploy-sass": "node-sass --output-style=compressed --include-path=./src/scss/ src/scss/main.scss css/main.css",
+    "CssCompat": "npx postcss --no-map css/ -d css/ --use autoprefixer",
+    "dev": "concurrently -k \"npm run watch-react\" \"npm run watch-sass\"",
+    "build": "npm run build-react && npm run build-sass",
+    "deploy": "npm run deploy-react && npm run deploy-sass && npm run CssCompat",
+    "postinstall": "npm run deploy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org:andre_azev/hydra.git"
+  },
+  "author": "André Azevedo",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "classlist-polyfill": "^1.2.0",
+    "element-closest": "^2.0.2",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "webpack": "^4.8.3",
+    "webpack-cli": "^2.1.3"
+  }
+}
