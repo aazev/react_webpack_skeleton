@@ -1,41 +1,48 @@
 {
-  "name": "reactWebpackSkeleton",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "build-react": "webpack -d",
-    "build-sass": "node-sass --sourceMap=true --include-path=./src/scss/ src/scss/main.scss css/main.css",
-    "deploy-react": "webpack -p",
-    "deploy-sass": "node-sass --output-style=compressed --include-path=./src/scss/ src/scss/main.scss css/main.css",
-    "CssCompat": "npx postcss --no-map css/ -d css/ --use autoprefixer",
-    "dev": "concurrently -k \"npm run watch-react\" \"npm run watch-sass\"",
-    "build": "npm run build-react && npm run build-sass",
-    "deploy": "npm run deploy-react && npm run deploy-sass && npm run CssCompat",
-    "postinstall": "npm run deploy"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@bitbucket.org:andre_azev/hydra.git"
-  },
-  "author": "André Azevedo",
-  "license": "ISC",
-  "dependencies": {
-    "autoprefixer": "^8.5.0",
-    "axios": "^0.18.0",
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.4",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
-    "classlist-polyfill": "^1.2.0",
-    "element-closest": "^2.0.2",
-    "node-sass": "^4.9.0",
-    "postcss": "^6.0.22",
-    "postcss-cli": "^5.0.0",
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2",
-    "webpack": "^4.8.3",
-    "webpack-cli": "^2.1.3"
-  }
+	"name": "DuxStudio-reactWebpackSkeleton",
+	"version": "1.0.0",
+	"description": "React Sass Webpack Skeleton",
+	"main": "/public/index.php",
+	"scripts": {
+		"build-react": "webpack -d",
+		"build-sass": "node-sass --sourceMap=true --include-path=node_modules/delicious-hamburgers/scss/ --include-path=node_modules/delicious-hamburgers/scss/animations src/scss/ --output public/wp-content/themes/nossagrafica/css",
+		"deploy-react": "webpack -p",
+		"deploy-sass": "node-sass --output-style=compressed --include-path=node_modules/delicious-hamburgers/scss/ --include-path=node_modules/delicious-hamburgers/scss/animations src/scss/ --output public/wp-content/themes/nossagrafica/css",
+		"CssCompat": "npx postcss --no-map public/css/ -d public/css/ --use autoprefixer",
+		"dev": "concurrently -k \"npm run watch-react\" \"npm run watch-sass\"",
+		"build": "npm run build-react && npm run build-sass",
+		"deploy": "npm run deploy-react && npm run deploy-sass && npm run CssCompat"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git@bitbucket.org:andre_azev/reactwebpackskeleton.git"
+	},
+	"author": "André Azevedo <andre.azev@gmail.com>",
+	"license": "UNLICENSED",
+	"dependencies": {
+		"ajv": "^6.5.3",
+		"autoprefixer": "^8.6.5",
+		"axios": "^0.18.0",
+		"babel-cli": "^6.26.0",
+		"babel-core": "^6.26.3",
+		"babel-loader": "^7.1.4",
+		"babel-plugin-transform-object-rest-spread": "^6.26.0",
+		"babel-preset-env": "^1.7.0",
+		"babel-preset-react": "^6.24.1",
+		"classlist-polyfill": "^1.2.0",
+		"custom-event-polyfill": "^0.3.0",
+		"delicious-hamburgers": "^0.3.5",
+		"element-closest": "^2.0.2",
+		"history": "^4.7.2",
+		"node-sass": "^4.9.3",
+		"postcss": "^6.0.22",
+		"postcss-cli": "^5.0.0",
+		"react": "^16.5.2",
+		"react-device-detect": "^1.6.1",
+		"react-dom": "^16.5.2",
+		"react-swipe-events": "^1.0.3",
+		"simplex-noise": "^2.4.0",
+		"webpack": "^4.19.1",
+		"webpack-cli": "^3.1.0"
+	}
 }

@@ -1,6 +1,4 @@
-css/
-scripts/
-vendor/
-node_modules/
-composer.lock
-package-lock.json
+/css/
+/scripts/
+/vendor/
+/node_modules/

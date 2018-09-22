@@ -1,20 +1,28 @@
 @charset "utf-8";
 @import "_reset";
 
+$hamburger-size			:			4.8rem;
+$hamburger-thickness	:			0.1rem;
+$hamburger-padding		:			1.2rem;
+$hamburger-bar-spacing	:			0.8rem;
+$hamburger-animations	:			(stack);
+$hamburger-color		:			$purple;
+@import "../../node_modules/delicious-hamburgers/scss/hamburgers";
+
 @mixin for-phone-only {
-  @media (max-width: 599px) { @content; }
+	@media (max-width: 599px) { @content; }
 }
 @mixin for-tablet-portrait-up {
-  @media (min-width: 600px) { @content; }
+	@media (min-width: 600px) { @content; }
 }
 @mixin for-tablet-landscape-up {
-  @media (min-width: 900px) { @content; }
+	@media (min-width: 900px) { @content; }
 }
 @mixin for-desktop-up {
-  @media (min-width: 1200px) { @content; }
+	@media (min-width: 1200px) { @content; }
 }
 @mixin for-big-desktop-up {
-  @media (min-width: 1800px) { @content; }
+	@media (min-width: 1800px) { @content; }
 }
 
 :root{
@@ -36,4 +44,16 @@ html {
 body{
 	min-width:100vw;
 	min-height:100vh;
+}
+
+@include for-tablet-portrait-up{
+	@import "_tablet";
+}
+
+@include for-desktop-up{
+	@import "_desktop";
+}
+
+@include for-big-desktop-up{
+	@import "_bigdesktop";
 }
