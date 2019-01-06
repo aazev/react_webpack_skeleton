@@ -1,4 +1,6 @@
-/css/
-/scripts/
 /vendor/
 /node_modules/
+/public/**/css/
+/public/**/js/
+!/public/**/css/*.css
+!/public/**/js/*.js

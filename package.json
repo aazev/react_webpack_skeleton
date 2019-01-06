@@ -5,9 +5,11 @@
 	"main": "/public/index.php",
 	"scripts": {
 		"build-react": "webpack -d",
-		"build-sass": "node-sass --sourceMap=true --include-path=node_modules/delicious-hamburgers/scss/ --include-path=node_modules/delicious-hamburgers/scss/animations src/scss/ --output public/wp-content/themes/nossagrafica/css",
+		"build-sass": "node-sass --sourceMap=true --include-path=node_modules/delicious-hamburgers/scss/ --include-path=node_modules/delicious-hamburgers/scss/animations src/scss/ --output public/css",
 		"deploy-react": "webpack -p",
-		"deploy-sass": "node-sass --output-style=compressed --include-path=node_modules/delicious-hamburgers/scss/ --include-path=node_modules/delicious-hamburgers/scss/animations src/scss/ --output public/wp-content/themes/nossagrafica/css",
+		"deploy-sass": "node-sass --output-style=compressed --include-path=node_modules/delicious-hamburgers/scss/ --include-path=node_modules/delicious-hamburgers/scss/animations src/scss/ --output public/css",
+		"watch-react": "webpack -d --watch",
+		"watch-sass": "node-sass -w -r --sourceMap=true --include-path=node_modules/delicious-hamburgers/scss/ --include-path=node_modules/delicious-hamburgers/scss/animations src/scss/ --output public/wp-content/themes/donadede/css",
 		"CssCompat": "npx postcss --no-map public/css/ -d public/css/ --use autoprefixer",
 		"dev": "concurrently -k \"npm run watch-react\" \"npm run watch-sass\"",
 		"build": "npm run build-react && npm run build-sass",
@@ -19,21 +21,17 @@
 	},
 	"author": "André Azevedo <andre.azev@gmail.com>",
 	"license": "UNLICENSED",
-	"dependencies": {
-		"ajv": "^6.5.3",
+	"dependencies": {},
+	"devDependencies": {
+		"@babel/core": "^7.2.2",
+		"@babel/preset-env": "^7.2.3",
+		"@babel/preset-react": "^7.0.0",
+		"babel-loader": "^8.0.5",
+		"webpack": "^4.28.3",
+		"webpack-cli": "^3.2.0",
 		"autoprefixer": "^8.6.5",
 		"axios": "^0.18.0",
-		"babel-cli": "^6.26.0",
-		"babel-core": "^6.26.3",
-		"babel-loader": "^7.1.4",
-		"babel-plugin-transform-object-rest-spread": "^6.26.0",
-		"babel-preset-env": "^1.7.0",
-		"babel-preset-react": "^6.24.1",
-		"classlist-polyfill": "^1.2.0",
-		"custom-event-polyfill": "^0.3.0",
 		"delicious-hamburgers": "^0.3.5",
-		"element-closest": "^2.0.2",
-		"history": "^4.7.2",
 		"node-sass": "^4.9.3",
 		"postcss": "^6.0.22",
 		"postcss-cli": "^5.0.0",
@@ -41,8 +39,6 @@
 		"react-device-detect": "^1.6.1",
 		"react-dom": "^16.5.2",
 		"react-swipe-events": "^1.0.3",
-		"simplex-noise": "^2.4.0",
-		"webpack": "^4.19.1",
-		"webpack-cli": "^3.1.0"
+		"simplex-noise": "^2.4.0"
 	}
 }
